@@ -1,0 +1,84 @@
+.main {
+    overflow: hidden;
+    height: 720px;
+}
+
+.main section {
+    float: left;
+    height: 100%;
+}
+
+.system {
+    position: relative;
+    width: 700px;
+    margin: 0px 20px;
+    /* background-image: url(../image/sys.png); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+button {
+    position: absolute;
+    display: block;
+}
+
+button.bus {
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #000;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+
+button.bus:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+button.generator {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #000;
+    border: 1px solid #000;
+    background-color: #fff;
+    border-radius: 40px;
+}
+
+button.generator:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+button.line {
+    background-color: #000;
+}
+
+button.line_v {
+    width: 4px;
+}
+
+button.line_h {
+    height: 4px;
+}
+
+button.line_gb {
+    cursor: default;
+}
+
+.viz {
+    width: 760px;
+    height: 100%;
+}
+
+.viz_title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.viz_wrap .dataviz {
+    margin-bottom: 10px;
+}

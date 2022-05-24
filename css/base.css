@@ -1,0 +1,87 @@
+/* 把所有标签的内外边距清零。有些网站不推荐使用。 */
+* {
+	margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+/* 斜体的文字不倾斜 */
+em, 
+i {
+	font-style: normal;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+/* 去掉li的小圆点 */
+li {
+	list-style: none;
+}
+
+img {
+	/* 照顾低版本浏览器如果图片有链接有边框的问题 */
+	border: 0; 
+	/* 取消图片底下的空白缝隙 */
+	vertical-align: middle; 
+}
+
+/* 鼠标悬停时变换样式 */
+button {
+	cursor: pointer;
+}
+
+body {
+	/* CSS3 抗锯齿性 */
+	-webkit-font-smoothing: antialiased;
+	font: 14px/1.5 "Microsoft Yahei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu, sans-serif;
+}
+
+/* 清除浮动 */
+.clearfix::after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.clearfix {  
+	*zoom: 1;
+}
+
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.ellipsis {
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+button {
+	border: none;
+    cursor: pointer;
+	background: transparent;
+}

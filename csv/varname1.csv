@@ -1,0 +1,650 @@
+,0
+0,delta_Syn_1
+1,omega_Syn_1
+2,e1q_Syn_1
+3,e1d_Syn_1
+4,delta_Syn_2
+5,omega_Syn_2
+6,e1q_Syn_2
+7,e1d_Syn_2
+8,delta_Syn_3
+9,omega_Syn_3
+10,e1q_Syn_3
+11,e1d_Syn_3
+12,delta_Syn_4
+13,omega_Syn_4
+14,e1q_Syn_4
+15,e1d_Syn_4
+16,delta_Syn_5
+17,omega_Syn_5
+18,e1q_Syn_5
+19,e1d_Syn_5
+20,delta_Syn_6
+21,omega_Syn_6
+22,e1q_Syn_6
+23,e1d_Syn_6
+24,delta_Syn_7
+25,omega_Syn_7
+26,e1q_Syn_7
+27,e1d_Syn_7
+28,delta_Syn_8
+29,omega_Syn_8
+30,e1q_Syn_8
+31,e1d_Syn_8
+32,delta_Syn_9
+33,omega_Syn_9
+34,e1q_Syn_9
+35,e1d_Syn_9
+36,delta_Syn_10
+37,omega_Syn_10
+38,e1q_Syn_10
+39,e1d_Syn_10
+40,vm_Exc_1
+41,vr1_Exc_1
+42,vr2_Exc_1
+43,vf_Exc_1
+44,vm_Exc_2
+45,vr1_Exc_2
+46,vr2_Exc_2
+47,vf_Exc_2
+48,vm_Exc_3
+49,vr1_Exc_3
+50,vr2_Exc_3
+51,vf_Exc_3
+52,vm_Exc_4
+53,vr1_Exc_4
+54,vr2_Exc_4
+55,vf_Exc_4
+56,vm_Exc_5
+57,vr1_Exc_5
+58,vr2_Exc_5
+59,vf_Exc_5
+60,vm_Exc_6
+61,vr1_Exc_6
+62,vr2_Exc_6
+63,vf_Exc_6
+64,vm_Exc_7
+65,vr1_Exc_7
+66,vr2_Exc_7
+67,vf_Exc_7
+68,vm_Exc_8
+69,vr1_Exc_8
+70,vr2_Exc_8
+71,vf_Exc_8
+72,vm_Exc_9
+73,vr1_Exc_9
+74,vr2_Exc_9
+75,vf_Exc_9
+76,theta_Bus  1
+77,theta_Bus  2
+78,theta_Bus  3
+79,theta_Bus  4
+80,theta_Bus  5
+81,theta_Bus  6
+82,theta_Bus  7
+83,theta_Bus  8
+84,theta_Bus  9
+85,theta_Bus 10
+86,theta_Bus 11
+87,theta_Bus 12
+88,theta_Bus 13
+89,theta_Bus 14
+90,theta_Bus 15
+91,theta_Bus 16
+92,theta_Bus 17
+93,theta_Bus 18
+94,theta_Bus 19
+95,theta_Bus 20
+96,theta_Bus 21
+97,theta_Bus 22
+98,theta_Bus 23
+99,theta_Bus 24
+100,theta_Bus 25
+101,theta_Bus 26
+102,theta_Bus 27
+103,theta_Bus 28
+104,theta_Bus 29
+105,theta_Bus 30
+106,theta_Bus 31
+107,theta_Bus 32
+108,theta_Bus 33
+109,theta_Bus 34
+110,theta_Bus 35
+111,theta_Bus 36
+112,theta_Bus 37
+113,theta_Bus 38
+114,theta_Bus 39
+115,V_Bus  1
+116,V_Bus  2
+117,V_Bus  3
+118,V_Bus  4
+119,V_Bus  5
+120,V_Bus  6
+121,V_Bus  7
+122,V_Bus  8
+123,V_Bus  9
+124,V_Bus 10
+125,V_Bus 11
+126,V_Bus 12
+127,V_Bus 13
+128,V_Bus 14
+129,V_Bus 15
+130,V_Bus 16
+131,V_Bus 17
+132,V_Bus 18
+133,V_Bus 19
+134,V_Bus 20
+135,V_Bus 21
+136,V_Bus 22
+137,V_Bus 23
+138,V_Bus 24
+139,V_Bus 25
+140,V_Bus 26
+141,V_Bus 27
+142,V_Bus 28
+143,V_Bus 29
+144,V_Bus 30
+145,V_Bus 31
+146,V_Bus 32
+147,V_Bus 33
+148,V_Bus 34
+149,V_Bus 35
+150,V_Bus 36
+151,V_Bus 37
+152,V_Bus 38
+153,V_Bus 39
+154,vf_Syn_1
+155,pm_Syn_1
+156,p_Syn_1
+157,q_Syn_1
+158,vf_Syn_2
+159,pm_Syn_2
+160,p_Syn_2
+161,q_Syn_2
+162,vf_Syn_3
+163,pm_Syn_3
+164,p_Syn_3
+165,q_Syn_3
+166,vf_Syn_4
+167,pm_Syn_4
+168,p_Syn_4
+169,q_Syn_4
+170,vf_Syn_5
+171,pm_Syn_5
+172,p_Syn_5
+173,q_Syn_5
+174,vf_Syn_6
+175,pm_Syn_6
+176,p_Syn_6
+177,q_Syn_6
+178,vf_Syn_7
+179,pm_Syn_7
+180,p_Syn_7
+181,q_Syn_7
+182,vf_Syn_8
+183,pm_Syn_8
+184,p_Syn_8
+185,q_Syn_8
+186,vf_Syn_9
+187,pm_Syn_9
+188,p_Syn_9
+189,q_Syn_9
+190,vf_Syn_10
+191,pm_Syn_10
+192,p_Syn_10
+193,q_Syn_10
+194,vref_Exc_1
+195,vref_Exc_2
+196,vref_Exc_3
+197,vref_Exc_4
+198,vref_Exc_5
+199,vref_Exc_6
+200,vref_Exc_7
+201,vref_Exc_8
+202,vref_Exc_9
+203,P_Bus  1
+204,P_Bus  2
+205,P_Bus  3
+206,P_Bus  4
+207,P_Bus  5
+208,P_Bus  6
+209,P_Bus  7
+210,P_Bus  8
+211,P_Bus  9
+212,P_Bus 10
+213,P_Bus 11
+214,P_Bus 12
+215,P_Bus 13
+216,P_Bus 14
+217,P_Bus 15
+218,P_Bus 16
+219,P_Bus 17
+220,P_Bus 18
+221,P_Bus 19
+222,P_Bus 20
+223,P_Bus 21
+224,P_Bus 22
+225,P_Bus 23
+226,P_Bus 24
+227,P_Bus 25
+228,P_Bus 26
+229,P_Bus 27
+230,P_Bus 28
+231,P_Bus 29
+232,P_Bus 30
+233,P_Bus 31
+234,P_Bus 32
+235,P_Bus 33
+236,P_Bus 34
+237,P_Bus 35
+238,P_Bus 36
+239,P_Bus 37
+240,P_Bus 38
+241,P_Bus 39
+242,Q_Bus  1
+243,Q_Bus  2
+244,Q_Bus  3
+245,Q_Bus  4
+246,Q_Bus  5
+247,Q_Bus  6
+248,Q_Bus  7
+249,Q_Bus  8
+250,Q_Bus  9
+251,Q_Bus 10
+252,Q_Bus 11
+253,Q_Bus 12
+254,Q_Bus 13
+255,Q_Bus 14
+256,Q_Bus 15
+257,Q_Bus 16
+258,Q_Bus 17
+259,Q_Bus 18
+260,Q_Bus 19
+261,Q_Bus 20
+262,Q_Bus 21
+263,Q_Bus 22
+264,Q_Bus 23
+265,Q_Bus 24
+266,Q_Bus 25
+267,Q_Bus 26
+268,Q_Bus 27
+269,Q_Bus 28
+270,Q_Bus 29
+271,Q_Bus 30
+272,Q_Bus 31
+273,Q_Bus 32
+274,Q_Bus 33
+275,Q_Bus 34
+276,Q_Bus 35
+277,Q_Bus 36
+278,Q_Bus 37
+279,Q_Bus 38
+280,Q_Bus 39
+281,P_Bus  1_Bus  2
+282,P_Bus  1_Bus 39
+283,P_Bus  2_Bus  3
+284,P_Bus  2_Bus 25
+285,P_Bus  3_Bus  4
+286,P_Bus  3_Bus 18
+287,P_Bus  4_Bus  5
+288,P_Bus  4_Bus 14
+289,P_Bus  5_Bus  6
+290,P_Bus  5_Bus  8
+291,P_Bus  6_Bus  7
+292,P_Bus  6_Bus 11
+293,P_Bus  7_Bus  8
+294,P_Bus  8_Bus  9
+295,P_Bus  9_Bus 39
+296,P_Bus 10_Bus 11
+297,P_Bus 10_Bus 13
+298,P_Bus 13_Bus 14
+299,P_Bus 14_Bus 15
+300,P_Bus 15_Bus 16
+301,P_Bus 16_Bus 17
+302,P_Bus 16_Bus 19
+303,P_Bus 16_Bus 21
+304,P_Bus 16_Bus 24
+305,P_Bus 17_Bus 18
+306,P_Bus 17_Bus 27
+307,P_Bus 21_Bus 22
+308,P_Bus 22_Bus 23
+309,P_Bus 23_Bus 24
+310,P_Bus 25_Bus 26
+311,P_Bus 26_Bus 27
+312,P_Bus 26_Bus 28
+313,P_Bus 26_Bus 29
+314,P_Bus 28_Bus 29
+315,P_Bus 29_Bus 38
+316,P_Bus  2_Bus 30
+317,P_Bus  6_Bus 31
+318,P_Bus 10_Bus 32
+319,P_Bus 11_Bus 12
+320,P_Bus 12_Bus 13
+321,P_Bus 19_Bus 20
+322,P_Bus 19_Bus 33
+323,P_Bus 20_Bus 34
+324,P_Bus 22_Bus 35
+325,P_Bus 25_Bus 37
+326,P_Bus 23_Bus 36
+327,P_Bus  2_Bus  1
+328,P_Bus 39_Bus  1
+329,P_Bus  3_Bus  2
+330,P_Bus 25_Bus  2
+331,P_Bus  4_Bus  3
+332,P_Bus 18_Bus  3
+333,P_Bus  5_Bus  4
+334,P_Bus 14_Bus  4
+335,P_Bus  6_Bus  5
+336,P_Bus  8_Bus  5
+337,P_Bus  7_Bus  6
+338,P_Bus 11_Bus  6
+339,P_Bus  8_Bus  7
+340,P_Bus  9_Bus  8
+341,P_Bus 39_Bus  9
+342,P_Bus 11_Bus 10
+343,P_Bus 13_Bus 10
+344,P_Bus 14_Bus 13
+345,P_Bus 15_Bus 14
+346,P_Bus 16_Bus 15
+347,P_Bus 17_Bus 16
+348,P_Bus 19_Bus 16
+349,P_Bus 21_Bus 16
+350,P_Bus 24_Bus 16
+351,P_Bus 18_Bus 17
+352,P_Bus 27_Bus 17
+353,P_Bus 22_Bus 21
+354,P_Bus 23_Bus 22
+355,P_Bus 24_Bus 23
+356,P_Bus 26_Bus 25
+357,P_Bus 27_Bus 26
+358,P_Bus 28_Bus 26
+359,P_Bus 29_Bus 26
+360,P_Bus 29_Bus 28
+361,P_Bus 38_Bus 29
+362,P_Bus 30_Bus  2
+363,P_Bus 31_Bus  6
+364,P_Bus 32_Bus 10
+365,P_Bus 12_Bus 11
+366,P_Bus 13_Bus 12
+367,P_Bus 20_Bus 19
+368,P_Bus 33_Bus 19
+369,P_Bus 34_Bus 20
+370,P_Bus 35_Bus 22
+371,P_Bus 37_Bus 25
+372,P_Bus 36_Bus 23
+373,Q_Bus  1_Bus  2
+374,Q_Bus  1_Bus 39
+375,Q_Bus  2_Bus  3
+376,Q_Bus  2_Bus 25
+377,Q_Bus  3_Bus  4
+378,Q_Bus  3_Bus 18
+379,Q_Bus  4_Bus  5
+380,Q_Bus  4_Bus 14
+381,Q_Bus  5_Bus  6
+382,Q_Bus  5_Bus  8
+383,Q_Bus  6_Bus  7
+384,Q_Bus  6_Bus 11
+385,Q_Bus  7_Bus  8
+386,Q_Bus  8_Bus  9
+387,Q_Bus  9_Bus 39
+388,Q_Bus 10_Bus 11
+389,Q_Bus 10_Bus 13
+390,Q_Bus 13_Bus 14
+391,Q_Bus 14_Bus 15
+392,Q_Bus 15_Bus 16
+393,Q_Bus 16_Bus 17
+394,Q_Bus 16_Bus 19
+395,Q_Bus 16_Bus 21
+396,Q_Bus 16_Bus 24
+397,Q_Bus 17_Bus 18
+398,Q_Bus 17_Bus 27
+399,Q_Bus 21_Bus 22
+400,Q_Bus 22_Bus 23
+401,Q_Bus 23_Bus 24
+402,Q_Bus 25_Bus 26
+403,Q_Bus 26_Bus 27
+404,Q_Bus 26_Bus 28
+405,Q_Bus 26_Bus 29
+406,Q_Bus 28_Bus 29
+407,Q_Bus 29_Bus 38
+408,Q_Bus  2_Bus 30
+409,Q_Bus  6_Bus 31
+410,Q_Bus 10_Bus 32
+411,Q_Bus 11_Bus 12
+412,Q_Bus 12_Bus 13
+413,Q_Bus 19_Bus 20
+414,Q_Bus 19_Bus 33
+415,Q_Bus 20_Bus 34
+416,Q_Bus 22_Bus 35
+417,Q_Bus 25_Bus 37
+418,Q_Bus 23_Bus 36
+419,Q_Bus  2_Bus  1
+420,Q_Bus 39_Bus  1
+421,Q_Bus  3_Bus  2
+422,Q_Bus 25_Bus  2
+423,Q_Bus  4_Bus  3
+424,Q_Bus 18_Bus  3
+425,Q_Bus  5_Bus  4
+426,Q_Bus 14_Bus  4
+427,Q_Bus  6_Bus  5
+428,Q_Bus  8_Bus  5
+429,Q_Bus  7_Bus  6
+430,Q_Bus 11_Bus  6
+431,Q_Bus  8_Bus  7
+432,Q_Bus  9_Bus  8
+433,Q_Bus 39_Bus  9
+434,Q_Bus 11_Bus 10
+435,Q_Bus 13_Bus 10
+436,Q_Bus 14_Bus 13
+437,Q_Bus 15_Bus 14
+438,Q_Bus 16_Bus 15
+439,Q_Bus 17_Bus 16
+440,Q_Bus 19_Bus 16
+441,Q_Bus 21_Bus 16
+442,Q_Bus 24_Bus 16
+443,Q_Bus 18_Bus 17
+444,Q_Bus 27_Bus 17
+445,Q_Bus 22_Bus 21
+446,Q_Bus 23_Bus 22
+447,Q_Bus 24_Bus 23
+448,Q_Bus 26_Bus 25
+449,Q_Bus 27_Bus 26
+450,Q_Bus 28_Bus 26
+451,Q_Bus 29_Bus 26
+452,Q_Bus 29_Bus 28
+453,Q_Bus 38_Bus 29
+454,Q_Bus 30_Bus  2
+455,Q_Bus 31_Bus  6
+456,Q_Bus 32_Bus 10
+457,Q_Bus 12_Bus 11
+458,Q_Bus 13_Bus 12
+459,Q_Bus 20_Bus 19
+460,Q_Bus 33_Bus 19
+461,Q_Bus 34_Bus 20
+462,Q_Bus 35_Bus 22
+463,Q_Bus 37_Bus 25
+464,Q_Bus 36_Bus 23
+465,I_Bus  1_Bus  2
+466,I_Bus  1_Bus 39
+467,I_Bus  2_Bus  3
+468,I_Bus  2_Bus 25
+469,I_Bus  3_Bus  4
+470,I_Bus  3_Bus 18
+471,I_Bus  4_Bus  5
+472,I_Bus  4_Bus 14
+473,I_Bus  5_Bus  6
+474,I_Bus  5_Bus  8
+475,I_Bus  6_Bus  7
+476,I_Bus  6_Bus 11
+477,I_Bus  7_Bus  8
+478,I_Bus  8_Bus  9
+479,I_Bus  9_Bus 39
+480,I_Bus 10_Bus 11
+481,I_Bus 10_Bus 13
+482,I_Bus 13_Bus 14
+483,I_Bus 14_Bus 15
+484,I_Bus 15_Bus 16
+485,I_Bus 16_Bus 17
+486,I_Bus 16_Bus 19
+487,I_Bus 16_Bus 21
+488,I_Bus 16_Bus 24
+489,I_Bus 17_Bus 18
+490,I_Bus 17_Bus 27
+491,I_Bus 21_Bus 22
+492,I_Bus 22_Bus 23
+493,I_Bus 23_Bus 24
+494,I_Bus 25_Bus 26
+495,I_Bus 26_Bus 27
+496,I_Bus 26_Bus 28
+497,I_Bus 26_Bus 29
+498,I_Bus 28_Bus 29
+499,I_Bus 29_Bus 38
+500,I_Bus  2_Bus 30
+501,I_Bus  6_Bus 31
+502,I_Bus 10_Bus 32
+503,I_Bus 11_Bus 12
+504,I_Bus 12_Bus 13
+505,I_Bus 19_Bus 20
+506,I_Bus 19_Bus 33
+507,I_Bus 20_Bus 34
+508,I_Bus 22_Bus 35
+509,I_Bus 25_Bus 37
+510,I_Bus 23_Bus 36
+511,I_Bus  2_Bus  1
+512,I_Bus 39_Bus  1
+513,I_Bus  3_Bus  2
+514,I_Bus 25_Bus  2
+515,I_Bus  4_Bus  3
+516,I_Bus 18_Bus  3
+517,I_Bus  5_Bus  4
+518,I_Bus 14_Bus  4
+519,I_Bus  6_Bus  5
+520,I_Bus  8_Bus  5
+521,I_Bus  7_Bus  6
+522,I_Bus 11_Bus  6
+523,I_Bus  8_Bus  7
+524,I_Bus  9_Bus  8
+525,I_Bus 39_Bus  9
+526,I_Bus 11_Bus 10
+527,I_Bus 13_Bus 10
+528,I_Bus 14_Bus 13
+529,I_Bus 15_Bus 14
+530,I_Bus 16_Bus 15
+531,I_Bus 17_Bus 16
+532,I_Bus 19_Bus 16
+533,I_Bus 21_Bus 16
+534,I_Bus 24_Bus 16
+535,I_Bus 18_Bus 17
+536,I_Bus 27_Bus 17
+537,I_Bus 22_Bus 21
+538,I_Bus 23_Bus 22
+539,I_Bus 24_Bus 23
+540,I_Bus 26_Bus 25
+541,I_Bus 27_Bus 26
+542,I_Bus 28_Bus 26
+543,I_Bus 29_Bus 26
+544,I_Bus 29_Bus 28
+545,I_Bus 38_Bus 29
+546,I_Bus 30_Bus  2
+547,I_Bus 31_Bus  6
+548,I_Bus 32_Bus 10
+549,I_Bus 12_Bus 11
+550,I_Bus 13_Bus 12
+551,I_Bus 20_Bus 19
+552,I_Bus 33_Bus 19
+553,I_Bus 34_Bus 20
+554,I_Bus 35_Bus 22
+555,I_Bus 37_Bus 25
+556,I_Bus 36_Bus 23
+557,S_Bus  1_Bus  2
+558,S_Bus  1_Bus 39
+559,S_Bus  2_Bus  3
+560,S_Bus  2_Bus 25
+561,S_Bus  3_Bus  4
+562,S_Bus  3_Bus 18
+563,S_Bus  4_Bus  5
+564,S_Bus  4_Bus 14
+565,S_Bus  5_Bus  6
+566,S_Bus  5_Bus  8
+567,S_Bus  6_Bus  7
+568,S_Bus  6_Bus 11
+569,S_Bus  7_Bus  8
+570,S_Bus  8_Bus  9
+571,S_Bus  9_Bus 39
+572,S_Bus 10_Bus 11
+573,S_Bus 10_Bus 13
+574,S_Bus 13_Bus 14
+575,S_Bus 14_Bus 15
+576,S_Bus 15_Bus 16
+577,S_Bus 16_Bus 17
+578,S_Bus 16_Bus 19
+579,S_Bus 16_Bus 21
+580,S_Bus 16_Bus 24
+581,S_Bus 17_Bus 18
+582,S_Bus 17_Bus 27
+583,S_Bus 21_Bus 22
+584,S_Bus 22_Bus 23
+585,S_Bus 23_Bus 24
+586,S_Bus 25_Bus 26
+587,S_Bus 26_Bus 27
+588,S_Bus 26_Bus 28
+589,S_Bus 26_Bus 29
+590,S_Bus 28_Bus 29
+591,S_Bus 29_Bus 38
+592,S_Bus  2_Bus 30
+593,S_Bus  6_Bus 31
+594,S_Bus 10_Bus 32
+595,S_Bus 11_Bus 12
+596,S_Bus 12_Bus 13
+597,S_Bus 19_Bus 20
+598,S_Bus 19_Bus 33
+599,S_Bus 20_Bus 34
+600,S_Bus 22_Bus 35
+601,S_Bus 25_Bus 37
+602,S_Bus 23_Bus 36
+603,S_Bus  2_Bus  1
+604,S_Bus 39_Bus  1
+605,S_Bus  3_Bus  2
+606,S_Bus 25_Bus  2
+607,S_Bus  4_Bus  3
+608,S_Bus 18_Bus  3
+609,S_Bus  5_Bus  4
+610,S_Bus 14_Bus  4
+611,S_Bus  6_Bus  5
+612,S_Bus  8_Bus  5
+613,S_Bus  7_Bus  6
+614,S_Bus 11_Bus  6
+615,S_Bus  8_Bus  7
+616,S_Bus  9_Bus  8
+617,S_Bus 39_Bus  9
+618,S_Bus 11_Bus 10
+619,S_Bus 13_Bus 10
+620,S_Bus 14_Bus 13
+621,S_Bus 15_Bus 14
+622,S_Bus 16_Bus 15
+623,S_Bus 17_Bus 16
+624,S_Bus 19_Bus 16
+625,S_Bus 21_Bus 16
+626,S_Bus 24_Bus 16
+627,S_Bus 18_Bus 17
+628,S_Bus 27_Bus 17
+629,S_Bus 22_Bus 21
+630,S_Bus 23_Bus 22
+631,S_Bus 24_Bus 23
+632,S_Bus 26_Bus 25
+633,S_Bus 27_Bus 26
+634,S_Bus 28_Bus 26
+635,S_Bus 29_Bus 26
+636,S_Bus 29_Bus 28
+637,S_Bus 38_Bus 29
+638,S_Bus 30_Bus  2
+639,S_Bus 31_Bus  6
+640,S_Bus 32_Bus 10
+641,S_Bus 12_Bus 11
+642,S_Bus 13_Bus 12
+643,S_Bus 20_Bus 19
+644,S_Bus 33_Bus 19
+645,S_Bus 34_Bus 20
+646,S_Bus 35_Bus 22
+647,S_Bus 37_Bus 25
+648,S_Bus 36_Bus 23

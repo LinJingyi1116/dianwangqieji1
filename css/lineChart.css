@@ -1,0 +1,51 @@
+.header {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.header_wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.header_item {
+    float: left;
+    width: 20%;
+    height: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 40px;
+}
+
+a.header_link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #000;
+}
+
+.header_item_active a.header_link,
+.header_item a.header_link:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.dataviz_wrap {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.dataviz {
+    display: block;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.dataviz_wrap .dataviz:nth-of-type(2n) {
+    margin-left: 0;
+}
