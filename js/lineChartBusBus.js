@@ -1,6 +1,6 @@
 var thisdata = []; // 可视化使用的数据
 var chart; // 可视化图表
-var myDataviz; //html元素
+var datavizWrap = $(".dataviz_wrap");
 
 const promise1 = d3.text("../csv/varname.csv");
 const promise2 = d3.text("../csv/case39_falut1.csv");
@@ -116,8 +116,10 @@ function ready(data1, data2) {
         color: "steelblue"
     })
     // 将图表插入网页元素中
-    myDataviz = document.querySelector("#my_dataviz1");
+    var myDataviz = document.createElement('div');
+    myDataviz.className = "dataviz";
     myDataviz.appendChild(chart);
+    datavizWrap.append(myDataviz);
 
     // 2 Q_Bus
     // 将数据转化为绘制折线图需要的格式
@@ -146,7 +148,9 @@ function ready(data1, data2) {
         color: "steelblue"
     })
     // 将图表插入网页元素中
-    myDataviz = document.querySelector("#my_dataviz2");
+    var myDataviz = document.createElement('div');
+    myDataviz.className = "dataviz";
     myDataviz.appendChild(chart);
+    datavizWrap.append(myDataviz);
 }
 
