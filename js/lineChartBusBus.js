@@ -2,8 +2,8 @@ var thisdata = []; // 可视化使用的数据
 var chart; // 可视化图表
 var datavizWrap = $(".dataviz_wrap");
 
-const promise1 = d3.text("../csv/varname.csv");
-const promise2 = d3.text("../csv/case39_falut1.csv");
+const promise1 = d3.text("../csv/varname2.csv");
+const promise2 = d3.text("../csv/varout2.csv");
 Promise.all([promise1, promise2]).then((values) => {
     ready(values[0], values[1]);
 })
@@ -20,7 +20,8 @@ function ready(data1, data2) {
     for (var i = 0; i < dt1.length; i++) {
         if (dt1[i][0] === undefined) continue;
         if (dt1[i][0] === "") continue;
-        mydata[0].push(dt1[i][0].split("'")[1]);
+        //mydata[0].push(dt1[i][0].split("'")[1]);
+        mydata[0].push(dt1[i][0]);
     }
     // 获取数据信息
     var dt2 = d3.csvParseRows(data2);
@@ -42,7 +43,7 @@ function ready(data1, data2) {
     // 根据数据含义处理数据
     var mydataPro = [];
     // 记录特殊数据的列下标
-    var theta40 = 0, V40 = 0, P40 = 0, Q40 = 0, P1to40 = 0, P40to2 = 0, P2to40 = 0, P40to1 = 0, Q1to40 = 0, Q40to2 = 0, Q2to40 = 0, Q40to1 = 0;
+    var theta40 = 0, V40 = 0, P40 = 0, Q40 = 0, P1to40 = 0, P40to2 = 0, P2to40 = 0, P40to1 = 0, Q1to40 = 0, Q40to2 = 0, Q2to40 = 0, Q40to1 = 0, I1to40 = 0, I40to2 = 0, I2to40 = 0, I40to1 = 0, S1to40 = 0, S40to2 = 0, S2to40 = 0, S40to1 = 0;
     // 处理 
     for (var i = 0; i < mydata.length; i++) {
         var myrowPro = mydata[i];
@@ -63,6 +64,14 @@ function ready(data1, data2) {
             myrowPro[Q1to40] = 'Q_Bus  1_Bus  2';
             Q2to40 = myrowPro.indexOf('Q_Bus  2_Bus 40'); 
             myrowPro[Q2to40] = 'Q_Bus  2_Bus  1';
+            I1to40 = myrowPro.indexOf('I_Bus  1_Bus 40');
+            myrowPro[I1to40] = 'I_Bus  1_Bus  2';
+            I2to40 = myrowPro.indexOf("I_Bus  2_Bus 40");
+            myrowPro[I2to40] = 'I_Bus  2_Bus  1';
+            S1to40 = myrowPro.indexOf('S_Bus  1_Bus 40');
+            myrowPro[S1to40] = 'S_Bus  1_Bus  2';
+            S2to40 = myrowPro.indexOf("S_Bus  2_Bus 40");
+            myrowPro[S2to40] = 'S_Bus  2_Bus  1';
             P40to2 = myrowPro.indexOf('P_Bus 40_Bus  2');
             myrowPro.splice(P40to2, 1);
             P40to1 = myrowPro.indexOf('P_Bus 40_Bus  1');
@@ -71,6 +80,14 @@ function ready(data1, data2) {
             myrowPro.splice(Q40to2, 1);
             Q40to1 = myrowPro.indexOf('Q_Bus 40_Bus  1');
             myrowPro.splice(Q40to1, 1);
+            I40to2 = myrowPro.indexOf('I_Bus 40_Bus  2');
+            myrowPro.splice(I40to2, 1);
+            I40to1 = myrowPro.indexOf('I_Bus 40_Bus  1');
+            myrowPro.splice(I40to1, 1);
+            S40to2 = myrowPro.indexOf('S_Bus 40_Bus  2');
+            myrowPro.splice(S40to2, 1);
+            S40to1 = myrowPro.indexOf('S_Bus 40_Bus  1');
+            myrowPro.splice(S40to1, 1);
         } else {
             myrowPro.splice(theta40, 1);
             myrowPro.splice(V40, 1);
@@ -80,16 +97,24 @@ function ready(data1, data2) {
             myrowPro[P2to40] += myrowPro[P40to1];
             myrowPro[Q1to40] += myrowPro[Q40to2];
             myrowPro[Q2to40] += myrowPro[Q40to1];
+            myrowPro[I1to40] += myrowPro[I40to2];
+            myrowPro[I2to40] += myrowPro[I40to1];
+            myrowPro[S1to40] += myrowPro[S40to2];
+            myrowPro[S2to40] += myrowPro[S40to1];
             myrowPro.splice(P40to2, 1);
             myrowPro.splice(P40to1, 1);
             myrowPro.splice(Q40to2, 1);
             myrowPro.splice(Q40to1, 1);
+            myrowPro.splice(I40to2, 1);
+            myrowPro.splice(I40to1, 1);
+            myrowPro.splice(S40to2, 1);
+            myrowPro.splice(S40to1, 1);
         }
         mydataPro.push(myrowPro);
     }
 
 
-    // 1 P_Bus
+    // 1 P_Bus_Bus
     // 将数据转化为绘制折线图需要的格式
     thisdata = [];
     for (var i = 1; i < mydataPro.length; i++) {
@@ -121,7 +146,7 @@ function ready(data1, data2) {
     myDataviz.appendChild(chart);
     datavizWrap.append(myDataviz);
 
-    // 2 Q_Bus
+    // 2 Q_Bus_Bus
     // 将数据转化为绘制折线图需要的格式
     thisdata = [];
     for (var i = 1; i < mydataPro.length; i++) {
@@ -152,5 +177,71 @@ function ready(data1, data2) {
     myDataviz.className = "dataviz";
     myDataviz.appendChild(chart);
     datavizWrap.append(myDataviz);
+
+    /*
+    // 3 I_Bus_Bus
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if(mydataPro[0][j].match(/Bus/g) == null || mydataPro[0][j].match(/Bus/g).length == 1) continue;
+            if(mydataPro[0][j].search('I_') == -1) continue;
+            var myrow = {};
+            myrow.time = mydataPro[i][0];
+            myrow.varname = mydataPro[0][j];
+            myrow.num = mydataPro[i][j];
+            thisdata.push(myrow);
+        }
+    }
+    console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "I_Bus",
+        width: 750,
+        height: 700,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    var myDataviz = document.createElement('div');
+    myDataviz.className = "dataviz";
+    myDataviz.appendChild(chart);
+    datavizWrap.append(myDataviz);
+
+    // 4 S_Bus_Bus
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if(mydataPro[0][j].match(/Bus/g) == null || mydataPro[0][j].match(/Bus/g).length == 1) continue;
+            if(mydataPro[0][j].search('S_') == -1) continue;
+            var myrow = {};
+            myrow.time = mydataPro[i][0];
+            myrow.varname = mydataPro[0][j];
+            myrow.num = mydataPro[i][j];
+            thisdata.push(myrow);
+        }
+    }
+    console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "S_Bus",
+        width: 750,
+        height: 700,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    var myDataviz = document.createElement('div');
+    myDataviz.className = "dataviz";
+    myDataviz.appendChild(chart);
+    datavizWrap.append(myDataviz);
+    */
 }
 

@@ -1,0 +1,661 @@
+delta_Syn_1
+omega_Syn_1
+e1q_Syn_1
+e1d_Syn_1
+delta_Syn_2
+omega_Syn_2
+e1q_Syn_2
+e1d_Syn_2
+delta_Syn_3
+omega_Syn_3
+e1q_Syn_3
+e1d_Syn_3
+delta_Syn_4
+omega_Syn_4
+e1q_Syn_4
+e1d_Syn_4
+delta_Syn_5
+omega_Syn_5
+e1q_Syn_5
+e1d_Syn_5
+delta_Syn_6
+omega_Syn_6
+e1q_Syn_6
+e1d_Syn_6
+delta_Syn_7
+omega_Syn_7
+e1q_Syn_7
+e1d_Syn_7
+delta_Syn_8
+omega_Syn_8
+e1q_Syn_8
+e1d_Syn_8
+delta_Syn_9
+omega_Syn_9
+e1q_Syn_9
+e1d_Syn_9
+delta_Syn_10
+omega_Syn_10
+e1q_Syn_10
+e1d_Syn_10
+vm_Exc_1
+vr1_Exc_1
+vr2_Exc_1
+vf_Exc_1
+vm_Exc_2
+vr1_Exc_2
+vr2_Exc_2
+vf_Exc_2
+vm_Exc_3
+vr1_Exc_3
+vr2_Exc_3
+vf_Exc_3
+vm_Exc_4
+vr1_Exc_4
+vr2_Exc_4
+vf_Exc_4
+vm_Exc_5
+vr1_Exc_5
+vr2_Exc_5
+vf_Exc_5
+vm_Exc_6
+vr1_Exc_6
+vr2_Exc_6
+vf_Exc_6
+vm_Exc_7
+vr1_Exc_7
+vr2_Exc_7
+vf_Exc_7
+vm_Exc_8
+vr1_Exc_8
+vr2_Exc_8
+vf_Exc_8
+vm_Exc_9
+vr1_Exc_9
+vr2_Exc_9
+vf_Exc_9
+theta_Bus  1
+theta_Bus  2
+theta_Bus  3
+theta_Bus  4
+theta_Bus  5
+theta_Bus  6
+theta_Bus  7
+theta_Bus  8
+theta_Bus  9
+theta_Bus 10
+theta_Bus 11
+theta_Bus 12
+theta_Bus 13
+theta_Bus 14
+theta_Bus 15
+theta_Bus 16
+theta_Bus 17
+theta_Bus 18
+theta_Bus 19
+theta_Bus 20
+theta_Bus 21
+theta_Bus 22
+theta_Bus 23
+theta_Bus 24
+theta_Bus 25
+theta_Bus 26
+theta_Bus 27
+theta_Bus 28
+theta_Bus 29
+theta_Bus 30
+theta_Bus 31
+theta_Bus 32
+theta_Bus 33
+theta_Bus 34
+theta_Bus 35
+theta_Bus 36
+theta_Bus 37
+theta_Bus 38
+theta_Bus 39
+theta_Bus 40
+V_Bus  1
+V_Bus  2
+V_Bus  3
+V_Bus  4
+V_Bus  5
+V_Bus  6
+V_Bus  7
+V_Bus  8
+V_Bus  9
+V_Bus 10
+V_Bus 11
+V_Bus 12
+V_Bus 13
+V_Bus 14
+V_Bus 15
+V_Bus 16
+V_Bus 17
+V_Bus 18
+V_Bus 19
+V_Bus 20
+V_Bus 21
+V_Bus 22
+V_Bus 23
+V_Bus 24
+V_Bus 25
+V_Bus 26
+V_Bus 27
+V_Bus 28
+V_Bus 29
+V_Bus 30
+V_Bus 31
+V_Bus 32
+V_Bus 33
+V_Bus 34
+V_Bus 35
+V_Bus 36
+V_Bus 37
+V_Bus 38
+V_Bus 39
+V_Bus 40
+vf_Syn_1
+pm_Syn_1
+p_Syn_1
+q_Syn_1
+vf_Syn_2
+pm_Syn_2
+p_Syn_2
+q_Syn_2
+vf_Syn_3
+pm_Syn_3
+p_Syn_3
+q_Syn_3
+vf_Syn_4
+pm_Syn_4
+p_Syn_4
+q_Syn_4
+vf_Syn_5
+pm_Syn_5
+p_Syn_5
+q_Syn_5
+vf_Syn_6
+pm_Syn_6
+p_Syn_6
+q_Syn_6
+vf_Syn_7
+pm_Syn_7
+p_Syn_7
+q_Syn_7
+vf_Syn_8
+pm_Syn_8
+p_Syn_8
+q_Syn_8
+vf_Syn_9
+pm_Syn_9
+p_Syn_9
+q_Syn_9
+vf_Syn_10
+pm_Syn_10
+p_Syn_10
+q_Syn_10
+vref_Exc_1
+vref_Exc_2
+vref_Exc_3
+vref_Exc_4
+vref_Exc_5
+vref_Exc_6
+vref_Exc_7
+vref_Exc_8
+vref_Exc_9
+P_Bus  1
+P_Bus  2
+P_Bus  3
+P_Bus  4
+P_Bus  5
+P_Bus  6
+P_Bus  7
+P_Bus  8
+P_Bus  9
+P_Bus 10
+P_Bus 11
+P_Bus 12
+P_Bus 13
+P_Bus 14
+P_Bus 15
+P_Bus 16
+P_Bus 17
+P_Bus 18
+P_Bus 19
+P_Bus 20
+P_Bus 21
+P_Bus 22
+P_Bus 23
+P_Bus 24
+P_Bus 25
+P_Bus 26
+P_Bus 27
+P_Bus 28
+P_Bus 29
+P_Bus 30
+P_Bus 31
+P_Bus 32
+P_Bus 33
+P_Bus 34
+P_Bus 35
+P_Bus 36
+P_Bus 37
+P_Bus 38
+P_Bus 39
+P_Bus 40
+Q_Bus  1
+Q_Bus  2
+Q_Bus  3
+Q_Bus  4
+Q_Bus  5
+Q_Bus  6
+Q_Bus  7
+Q_Bus  8
+Q_Bus  9
+Q_Bus 10
+Q_Bus 11
+Q_Bus 12
+Q_Bus 13
+Q_Bus 14
+Q_Bus 15
+Q_Bus 16
+Q_Bus 17
+Q_Bus 18
+Q_Bus 19
+Q_Bus 20
+Q_Bus 21
+Q_Bus 22
+Q_Bus 23
+Q_Bus 24
+Q_Bus 25
+Q_Bus 26
+Q_Bus 27
+Q_Bus 28
+Q_Bus 29
+Q_Bus 30
+Q_Bus 31
+Q_Bus 32
+Q_Bus 33
+Q_Bus 34
+Q_Bus 35
+Q_Bus 36
+Q_Bus 37
+Q_Bus 38
+Q_Bus 39
+Q_Bus 40
+P_Bus  1_Bus 40
+P_Bus  1_Bus 39
+P_Bus  2_Bus  3
+P_Bus  2_Bus 25
+P_Bus  3_Bus  4
+P_Bus  3_Bus 18
+P_Bus  4_Bus  5
+P_Bus  4_Bus 14
+P_Bus  5_Bus  6
+P_Bus  5_Bus  8
+P_Bus  6_Bus  7
+P_Bus  6_Bus 11
+P_Bus  7_Bus  8
+P_Bus  8_Bus  9
+P_Bus  9_Bus 39
+P_Bus 10_Bus 11
+P_Bus 10_Bus 13
+P_Bus 13_Bus 14
+P_Bus 14_Bus 15
+P_Bus 15_Bus 16
+P_Bus 16_Bus 17
+P_Bus 16_Bus 19
+P_Bus 16_Bus 21
+P_Bus 16_Bus 24
+P_Bus 17_Bus 18
+P_Bus 17_Bus 27
+P_Bus 21_Bus 22
+P_Bus 22_Bus 23
+P_Bus 23_Bus 24
+P_Bus 25_Bus 26
+P_Bus 26_Bus 27
+P_Bus 26_Bus 28
+P_Bus 26_Bus 29
+P_Bus 28_Bus 29
+P_Bus 29_Bus 38
+P_Bus  2_Bus 30
+P_Bus  6_Bus 31
+P_Bus 10_Bus 32
+P_Bus 11_Bus 12
+P_Bus 12_Bus 13
+P_Bus 19_Bus 20
+P_Bus 19_Bus 33
+P_Bus 20_Bus 34
+P_Bus 22_Bus 35
+P_Bus 25_Bus 37
+P_Bus 23_Bus 36
+P_Bus 40_Bus  2
+P_Bus 40_Bus  1
+P_Bus 39_Bus  1
+P_Bus  3_Bus  2
+P_Bus 25_Bus  2
+P_Bus  4_Bus  3
+P_Bus 18_Bus  3
+P_Bus  5_Bus  4
+P_Bus 14_Bus  4
+P_Bus  6_Bus  5
+P_Bus  8_Bus  5
+P_Bus  7_Bus  6
+P_Bus 11_Bus  6
+P_Bus  8_Bus  7
+P_Bus  9_Bus  8
+P_Bus 39_Bus  9
+P_Bus 11_Bus 10
+P_Bus 13_Bus 10
+P_Bus 14_Bus 13
+P_Bus 15_Bus 14
+P_Bus 16_Bus 15
+P_Bus 17_Bus 16
+P_Bus 19_Bus 16
+P_Bus 21_Bus 16
+P_Bus 24_Bus 16
+P_Bus 18_Bus 17
+P_Bus 27_Bus 17
+P_Bus 22_Bus 21
+P_Bus 23_Bus 22
+P_Bus 24_Bus 23
+P_Bus 26_Bus 25
+P_Bus 27_Bus 26
+P_Bus 28_Bus 26
+P_Bus 29_Bus 26
+P_Bus 29_Bus 28
+P_Bus 38_Bus 29
+P_Bus 30_Bus  2
+P_Bus 31_Bus  6
+P_Bus 32_Bus 10
+P_Bus 12_Bus 11
+P_Bus 13_Bus 12
+P_Bus 20_Bus 19
+P_Bus 33_Bus 19
+P_Bus 34_Bus 20
+P_Bus 35_Bus 22
+P_Bus 37_Bus 25
+P_Bus 36_Bus 23
+P_Bus  2_Bus 40
+Q_Bus  1_Bus 40
+Q_Bus  1_Bus 39
+Q_Bus  2_Bus  3
+Q_Bus  2_Bus 25
+Q_Bus  3_Bus  4
+Q_Bus  3_Bus 18
+Q_Bus  4_Bus  5
+Q_Bus  4_Bus 14
+Q_Bus  5_Bus  6
+Q_Bus  5_Bus  8
+Q_Bus  6_Bus  7
+Q_Bus  6_Bus 11
+Q_Bus  7_Bus  8
+Q_Bus  8_Bus  9
+Q_Bus  9_Bus 39
+Q_Bus 10_Bus 11
+Q_Bus 10_Bus 13
+Q_Bus 13_Bus 14
+Q_Bus 14_Bus 15
+Q_Bus 15_Bus 16
+Q_Bus 16_Bus 17
+Q_Bus 16_Bus 19
+Q_Bus 16_Bus 21
+Q_Bus 16_Bus 24
+Q_Bus 17_Bus 18
+Q_Bus 17_Bus 27
+Q_Bus 21_Bus 22
+Q_Bus 22_Bus 23
+Q_Bus 23_Bus 24
+Q_Bus 25_Bus 26
+Q_Bus 26_Bus 27
+Q_Bus 26_Bus 28
+Q_Bus 26_Bus 29
+Q_Bus 28_Bus 29
+Q_Bus 29_Bus 38
+Q_Bus  2_Bus 30
+Q_Bus  6_Bus 31
+Q_Bus 10_Bus 32
+Q_Bus 11_Bus 12
+Q_Bus 12_Bus 13
+Q_Bus 19_Bus 20
+Q_Bus 19_Bus 33
+Q_Bus 20_Bus 34
+Q_Bus 22_Bus 35
+Q_Bus 25_Bus 37
+Q_Bus 23_Bus 36
+Q_Bus 40_Bus  2
+Q_Bus 40_Bus  1
+Q_Bus 39_Bus  1
+Q_Bus  3_Bus  2
+Q_Bus 25_Bus  2
+Q_Bus  4_Bus  3
+Q_Bus 18_Bus  3
+Q_Bus  5_Bus  4
+Q_Bus 14_Bus  4
+Q_Bus  6_Bus  5
+Q_Bus  8_Bus  5
+Q_Bus  7_Bus  6
+Q_Bus 11_Bus  6
+Q_Bus  8_Bus  7
+Q_Bus  9_Bus  8
+Q_Bus 39_Bus  9
+Q_Bus 11_Bus 10
+Q_Bus 13_Bus 10
+Q_Bus 14_Bus 13
+Q_Bus 15_Bus 14
+Q_Bus 16_Bus 15
+Q_Bus 17_Bus 16
+Q_Bus 19_Bus 16
+Q_Bus 21_Bus 16
+Q_Bus 24_Bus 16
+Q_Bus 18_Bus 17
+Q_Bus 27_Bus 17
+Q_Bus 22_Bus 21
+Q_Bus 23_Bus 22
+Q_Bus 24_Bus 23
+Q_Bus 26_Bus 25
+Q_Bus 27_Bus 26
+Q_Bus 28_Bus 26
+Q_Bus 29_Bus 26
+Q_Bus 29_Bus 28
+Q_Bus 38_Bus 29
+Q_Bus 30_Bus  2
+Q_Bus 31_Bus  6
+Q_Bus 32_Bus 10
+Q_Bus 12_Bus 11
+Q_Bus 13_Bus 12
+Q_Bus 20_Bus 19
+Q_Bus 33_Bus 19
+Q_Bus 34_Bus 20
+Q_Bus 35_Bus 22
+Q_Bus 37_Bus 25
+Q_Bus 36_Bus 23
+Q_Bus  2_Bus 40
+I_Bus  1_Bus 40
+I_Bus  1_Bus 39
+I_Bus  2_Bus  3
+I_Bus  2_Bus 25
+I_Bus  3_Bus  4
+I_Bus  3_Bus 18
+I_Bus  4_Bus  5
+I_Bus  4_Bus 14
+I_Bus  5_Bus  6
+I_Bus  5_Bus  8
+I_Bus  6_Bus  7
+I_Bus  6_Bus 11
+I_Bus  7_Bus  8
+I_Bus  8_Bus  9
+I_Bus  9_Bus 39
+I_Bus 10_Bus 11
+I_Bus 10_Bus 13
+I_Bus 13_Bus 14
+I_Bus 14_Bus 15
+I_Bus 15_Bus 16
+I_Bus 16_Bus 17
+I_Bus 16_Bus 19
+I_Bus 16_Bus 21
+I_Bus 16_Bus 24
+I_Bus 17_Bus 18
+I_Bus 17_Bus 27
+I_Bus 21_Bus 22
+I_Bus 22_Bus 23
+I_Bus 23_Bus 24
+I_Bus 25_Bus 26
+I_Bus 26_Bus 27
+I_Bus 26_Bus 28
+I_Bus 26_Bus 29
+I_Bus 28_Bus 29
+I_Bus 29_Bus 38
+I_Bus  2_Bus 30
+I_Bus  6_Bus 31
+I_Bus 10_Bus 32
+I_Bus 11_Bus 12
+I_Bus 12_Bus 13
+I_Bus 19_Bus 20
+I_Bus 19_Bus 33
+I_Bus 20_Bus 34
+I_Bus 22_Bus 35
+I_Bus 25_Bus 37
+I_Bus 23_Bus 36
+I_Bus 40_Bus  2
+I_Bus 40_Bus  1
+I_Bus 39_Bus  1
+I_Bus  3_Bus  2
+I_Bus 25_Bus  2
+I_Bus  4_Bus  3
+I_Bus 18_Bus  3
+I_Bus  5_Bus  4
+I_Bus 14_Bus  4
+I_Bus  6_Bus  5
+I_Bus  8_Bus  5
+I_Bus  7_Bus  6
+I_Bus 11_Bus  6
+I_Bus  8_Bus  7
+I_Bus  9_Bus  8
+I_Bus 39_Bus  9
+I_Bus 11_Bus 10
+I_Bus 13_Bus 10
+I_Bus 14_Bus 13
+I_Bus 15_Bus 14
+I_Bus 16_Bus 15
+I_Bus 17_Bus 16
+I_Bus 19_Bus 16
+I_Bus 21_Bus 16
+I_Bus 24_Bus 16
+I_Bus 18_Bus 17
+I_Bus 27_Bus 17
+I_Bus 22_Bus 21
+I_Bus 23_Bus 22
+I_Bus 24_Bus 23
+I_Bus 26_Bus 25
+I_Bus 27_Bus 26
+I_Bus 28_Bus 26
+I_Bus 29_Bus 26
+I_Bus 29_Bus 28
+I_Bus 38_Bus 29
+I_Bus 30_Bus  2
+I_Bus 31_Bus  6
+I_Bus 32_Bus 10
+I_Bus 12_Bus 11
+I_Bus 13_Bus 12
+I_Bus 20_Bus 19
+I_Bus 33_Bus 19
+I_Bus 34_Bus 20
+I_Bus 35_Bus 22
+I_Bus 37_Bus 25
+I_Bus 36_Bus 23
+I_Bus  2_Bus 40
+S_Bus  1_Bus 40
+S_Bus  1_Bus 39
+S_Bus  2_Bus  3
+S_Bus  2_Bus 25
+S_Bus  3_Bus  4
+S_Bus  3_Bus 18
+S_Bus  4_Bus  5
+S_Bus  4_Bus 14
+S_Bus  5_Bus  6
+S_Bus  5_Bus  8
+S_Bus  6_Bus  7
+S_Bus  6_Bus 11
+S_Bus  7_Bus  8
+S_Bus  8_Bus  9
+S_Bus  9_Bus 39
+S_Bus 10_Bus 11
+S_Bus 10_Bus 13
+S_Bus 13_Bus 14
+S_Bus 14_Bus 15
+S_Bus 15_Bus 16
+S_Bus 16_Bus 17
+S_Bus 16_Bus 19
+S_Bus 16_Bus 21
+S_Bus 16_Bus 24
+S_Bus 17_Bus 18
+S_Bus 17_Bus 27
+S_Bus 21_Bus 22
+S_Bus 22_Bus 23
+S_Bus 23_Bus 24
+S_Bus 25_Bus 26
+S_Bus 26_Bus 27
+S_Bus 26_Bus 28
+S_Bus 26_Bus 29
+S_Bus 28_Bus 29
+S_Bus 29_Bus 38
+S_Bus  2_Bus 30
+S_Bus  6_Bus 31
+S_Bus 10_Bus 32
+S_Bus 11_Bus 12
+S_Bus 12_Bus 13
+S_Bus 19_Bus 20
+S_Bus 19_Bus 33
+S_Bus 20_Bus 34
+S_Bus 22_Bus 35
+S_Bus 25_Bus 37
+S_Bus 23_Bus 36
+S_Bus 40_Bus  2
+S_Bus 40_Bus  1
+S_Bus 39_Bus  1
+S_Bus  3_Bus  2
+S_Bus 25_Bus  2
+S_Bus  4_Bus  3
+S_Bus 18_Bus  3
+S_Bus  5_Bus  4
+S_Bus 14_Bus  4
+S_Bus  6_Bus  5
+S_Bus  8_Bus  5
+S_Bus  7_Bus  6
+S_Bus 11_Bus  6
+S_Bus  8_Bus  7
+S_Bus  9_Bus  8
+S_Bus 39_Bus  9
+S_Bus 11_Bus 10
+S_Bus 13_Bus 10
+S_Bus 14_Bus 13
+S_Bus 15_Bus 14
+S_Bus 16_Bus 15
+S_Bus 17_Bus 16
+S_Bus 19_Bus 16
+S_Bus 21_Bus 16
+S_Bus 24_Bus 16
+S_Bus 18_Bus 17
+S_Bus 27_Bus 17
+S_Bus 22_Bus 21
+S_Bus 23_Bus 22
+S_Bus 24_Bus 23
+S_Bus 26_Bus 25
+S_Bus 27_Bus 26
+S_Bus 28_Bus 26
+S_Bus 29_Bus 26
+S_Bus 29_Bus 28
+S_Bus 38_Bus 29
+S_Bus 30_Bus  2
+S_Bus 31_Bus  6
+S_Bus 32_Bus 10
+S_Bus 12_Bus 11
+S_Bus 13_Bus 12
+S_Bus 20_Bus 19
+S_Bus 33_Bus 19
+S_Bus 34_Bus 20
+S_Bus 35_Bus 22
+S_Bus 37_Bus 25
+S_Bus 36_Bus 23
+S_Bus  2_Bus 40

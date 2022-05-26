@@ -37,6 +37,11 @@ button.bus:hover {
     background-color: #000;
 }
 
+button.bus-active {
+    color: #fff;
+    background-color: #000;
+}
+
 button.generator {
     width: 40px;
     height: 40px;
@@ -49,6 +54,11 @@ button.generator {
 }
 
 button.generator:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+button.generator-active {
     color: #fff;
     background-color: #000;
 }
@@ -67,6 +77,10 @@ button.line_h {
 
 button.line_gb {
     cursor: default;
+}
+
+button.line-active {
+    background-color: steelblue;
 }
 
 .viz {
