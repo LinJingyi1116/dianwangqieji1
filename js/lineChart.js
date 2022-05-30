@@ -6,11 +6,45 @@ var datavizWrapExc = $("#dataviz_wrap_Exc");
 var datavizWrapBus = $("#dataviz_wrap_Bus");
 var datavizWrapBusBus = $("#dataviz_wrap_Bus_Bus");
 
-const promise1 = d3.text("../csv/varname2.csv");
-const promise2 = d3.text("../csv/varout2.csv");
+var varoutName = ["case39_falut1.csv", "varout2.csv"];
+var varoutNameIndex = sessionStorage.getItem("varoutNameIndex");
+if (varoutNameIndex == undefined || varoutNameIndex == 0) {
+    varoutNameIndex = 1;
+    sessionStorage.setItem("varoutNameIndex", varoutNameIndex);
+    console.log(varoutNameIndex);
+} else if (varoutNameIndex > 0 && varoutNameIndex < varoutName.length - 1) {
+    varoutNameIndex++;
+    sessionStorage.setItem("varoutNameIndex", varoutNameIndex);
+    console.log(varoutNameIndex);
+} else {
+    varoutNameIndex = 0;
+    sessionStorage.setItem("varoutNameIndex", varoutNameIndex);
+    console.log(varoutNameIndex);
+}
+
+var promise1 = d3.text("../csv/varname2.csv");
+var promise2 = d3.text("../csv/" + varoutName[varoutNameIndex]);
+var promiseST = setTimeout(function () {
+    if (varoutNameIndex == varoutName.length - 1) {
+        varoutNameIndex = 0;
+        sessionStorage.setItem("varoutNameIndex", varoutNameIndex);
+        clearTimeout(promiseST);
+    } else {
+        window.location.reload();
+    }
+}, 10000);
+Promise.all([promise1, promise2, promiseST]).then((values) => {
+    ready(values[0], values[1]);
+})
+
+
+/*
+var promise1 = d3.text("../csv/varname2.csv");
+var promise2 = d3.text("../csv/varout2.csv");
 Promise.all([promise1, promise2]).then((values) => {
     ready(values[0], values[1]);
 })
+*/
 
 function ready(data1, data2) {
 
@@ -671,27 +705,27 @@ function pushMyrow(sourceData, targetData, i, j) {
 
 
 /* 页面跳转 */
-$(function(){
+$(function () {
     var flag = true; //节流阀 互斥锁
-    $(window).scroll(function() {
-        if(flag) {
-            $(".content section").each(function(i, ele) {
-                if($(document).scrollTop() >= $(ele).offset().top - 41) {
+    $(window).scroll(function () {
+        if (flag) {
+            $(".content section").each(function (i, ele) {
+                if ($(document).scrollTop() >= $(ele).offset().top - 41) {
                     $(".header_item").eq(i).addClass("header_item_active").siblings().removeClass("header_item_active");
                 }
             })
-        }  
+        }
     })
 
-    $(".header_item").click(function() {
+    $(".header_item").click(function () {
         flag = false;
 
         $(this).addClass("header_item_active").siblings().removeClass("header_item_active");
-    
+
         var current = $(".content section").eq($(this).index()).offset().top - 40;
         $("body, html").stop().animate({
             scrollTop: current
-        }, function() {
+        }, function () {
             flag = true;
         });
     })
