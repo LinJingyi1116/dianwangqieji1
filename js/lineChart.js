@@ -1,60 +1,554 @@
+/* 画图 */
 var thisdata = []; // 可视化使用的数据
 var chart; // 可视化图表
-var bG = "0"; //buttonGenerator被点击的按钮的Index
-var bB = "0"; //buttonBus被点击的按钮的Index
-var bL = "0"; //buttonLine被点击的按钮的Index
-var viz = $(".viz_wrap");
-
-var buttonGenerator = $(".generator");
-var buttonBus = $(".bus");
-var buttonLine = $(".line");
-var vizTitle = $(".viz_title");
-var buttonLineGB = $(".line_gb");
+var datavizWrapSyn = $("#dataviz_wrap_Syn");
+var datavizWrapExc = $("#dataviz_wrap_Exc");
+var datavizWrapBus = $("#dataviz_wrap_Bus");
+var datavizWrapBusBus = $("#dataviz_wrap_Bus_Bus");
 
 const promise1 = d3.text("../csv/varname2.csv");
 const promise2 = d3.text("../csv/varout2.csv");
-
-buttonGenerator.on("click", function () {
-    bL = "0";
-    bB = "0";
-    viz.html("");
-    $(this).addClass("generator-active").siblings().removeClass("generator-active").removeClass("bus-active").removeClass("line-active");
-    bG = $(this).attr("data-index");
-    vizTitle.text("Generator " + bG);
-    Promise.all([promise1, promise2]).then((values) => {
-        drawViz(values[0], values[1]);
-    })
+Promise.all([promise1, promise2]).then((values) => {
+    ready(values[0], values[1]);
 })
 
-buttonBus.on("click", function () {
-    bG = "0";
-    bL = "0";
-    viz.html("");
-    $(this).addClass("bus-active").siblings().removeClass("generator-active").removeClass("bus-active").removeClass("line-active");
-    bB = $(this).attr("data-index");
-    vizTitle.text("Bus " + bB)
-    Promise.all([promise1, promise2]).then((values) => {
-        drawViz(values[0], values[1]);
+function ready(data1, data2) {
+
+    var mydataPro = preprocessing(data1, data2);
+
+    // 1 delta_Syn
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].search('Syn') == -1) continue;
+            if (mydataPro[0][j].search('delta_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "delta_Syn",
+        width: 750,
+        height: 300,
+        color: "steelblue"
     })
-})
+    // 将图表插入网页元素中
+    appendChart(datavizWrapSyn);
 
-buttonLine.on("click", function () {
-    bB = "0";
-    bG = "0";
-    viz.html("");
-    $(this).addClass("line-active").siblings().removeClass("generator-active").removeClass("bus-active").removeClass("line-active");
-    bL = $(this).attr("data-index").split("_")[0];
-    vizTitle.text("Bus " + bL.split("-")[0] + "_Bus " + bL.split("-")[1] + " / Bus " + bL.split("-")[1] + "_Bus " + bL.split("-")[0]);
-    Promise.all([promise1, promise2]).then((values) => {
-        drawViz(values[0], values[1]);
+    // 2 omega_Syn
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].search('Syn') == -1) continue;
+            if (mydataPro[0][j].search('omega_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "omega_Syn",
+        width: 750,
+        height: 300,
+        color: "steelblue"
     })
-})
+    // 将图表插入网页元素中
+    appendChart(datavizWrapSyn);
 
-buttonLineGB.off("click");
+    // 3 e1q_Syn
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].search('Syn') == -1) continue;
+            if (mydataPro[0][j].search('e1q_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "e1q_Syn",
+        width: 750,
+        height: 300,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapSyn);
+
+    // 4 e1d_Syn
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].search('Syn') == -1) continue;
+            if (mydataPro[0][j].search('e1d_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "e1d_Syn",
+        width: 750,
+        height: 300,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapSyn);
+
+    // 5 vf_Syn
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].search('Syn') == -1) continue;
+            if (mydataPro[0][j].search('vf_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "vf_Syn",
+        width: 750,
+        height: 300,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapSyn);
+
+    // 6 pm_Syn
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].search('Syn') == -1) continue;
+            if (mydataPro[0][j].search('pm_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "pm_Syn",
+        width: 750,
+        height: 300,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapSyn);
+
+    // 7 p_Syn
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].search('Syn') == -1) continue;
+            if (mydataPro[0][j].search('p_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "p_Syn",
+        width: 750,
+        height: 300,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapSyn);
+
+    // 8 q_Syn
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].search('Syn') == -1) continue;
+            if (mydataPro[0][j].search('q_') == -1) continue;
+            if (mydataPro[0][j].search('e1q_') != -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "q_Syn",
+        width: 750,
+        height: 300,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapSyn);
 
 
-function drawViz(data1, data2) {
+    // 1 vm_Exc
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].search('Exc') == -1) continue;
+            if (mydataPro[0][j].search('vm_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "vm_Exc",
+        width: 750,
+        height: 300,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapExc);
 
+    // 2 vr1_Exc
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].search('Exc') == -1) continue;
+            if (mydataPro[0][j].search('vr1_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "vr1_Exc",
+        width: 750,
+        height: 300,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapExc);
+
+    // 3 vr2_Exc
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].search('Exc') == -1) continue;
+            if (mydataPro[0][j].search('vr2_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "vr2_Exc",
+        width: 750,
+        height: 300,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapExc);
+
+    // 4 vf_Exc
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].search('Exc') == -1) continue;
+            if (mydataPro[0][j].search('vf_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "vf_Exc",
+        width: 750,
+        height: 300,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapExc);
+
+    // 5 vref_Exc
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].search('Exc') == -1) continue;
+            if (mydataPro[0][j].search('vref_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "vref_Exc",
+        width: 750,
+        height: 300,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapExc);
+
+
+    // 1 theta_Bus
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].match(/Bus/g) == null || mydataPro[0][j].match(/Bus/g).length != 1) continue;
+            if (mydataPro[0][j].search('theta_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "theta_Bus",
+        width: 750,
+        height: 300,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapBus);
+
+    // 2 V_Bus
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].match(/Bus/g) == null || mydataPro[0][j].match(/Bus/g).length != 1) continue;
+            if (mydataPro[0][j].search('V_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "V_Bus",
+        width: 750,
+        height: 300,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapBus);
+
+    // 3 P_Bus
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].match(/Bus/g) == null || mydataPro[0][j].match(/Bus/g).length != 1) continue;
+            if (mydataPro[0][j].search('P_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "P_Bus",
+        width: 750,
+        height: 300,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapBus);
+
+    // 4 Q_Bus
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].match(/Bus/g) == null || mydataPro[0][j].match(/Bus/g).length != 1) continue;
+            if (mydataPro[0][j].search('Q_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "Q_Bus",
+        width: 750,
+        height: 300,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapBus);
+
+
+    // 1 P_Bus_Bus
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].match(/Bus/g) == null || mydataPro[0][j].match(/Bus/g).length == 1) continue;
+            if (mydataPro[0][j].search('P_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "P_Bus",
+        width: 750,
+        height: 650,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapBusBus);
+
+    // 2 Q_Bus_Bus
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if (mydataPro[0][j].match(/Bus/g) == null || mydataPro[0][j].match(/Bus/g).length == 1) continue;
+            if (mydataPro[0][j].search('Q_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "Q_Bus",
+        width: 750,
+        height: 650,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapBusBus);
+
+    /*
+    // 3 I_Bus_Bus
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if(mydataPro[0][j].match(/Bus/g) == null || mydataPro[0][j].match(/Bus/g).length == 1) continue;
+            if(mydataPro[0][j].search('I_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "I_Bus",
+        width: 750,
+        height: 650,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapBusBus);
+
+    // 4 S_Bus_Bus
+    // 将数据转化为绘制折线图需要的格式
+    thisdata = [];
+    for (var i = 1; i < mydataPro.length; i++) {
+        for (var j = 1; j < mydataPro[i].length; j++) {
+            if(mydataPro[0][j].match(/Bus/g) == null || mydataPro[0][j].match(/Bus/g).length == 1) continue;
+            if(mydataPro[0][j].search('S_') == -1) continue;
+            pushMyrow(mydataPro, thisdata, i, j);
+        }
+    }
+    // console.log(thisdata);
+    // 绘图(导入drawLineChart.js)
+    chart = LineChart(thisdata, {
+        x: d => d.time,
+        y: d => d.num,
+        z: d => d.varname,
+        xType: d3.scaleLinear,
+        yLabel: "S_Bus",
+        width: 750,
+        height: 650,
+        color: "steelblue"
+    })
+    // 将图表插入网页元素中
+    appendChart(datavizWrapBusBus);
+    */
+}
+
+function preprocessing(data1, data2) {
     // 读取数据，合并数据信息
     var mydata = [];
     mydata[0] = [];
@@ -101,13 +595,13 @@ function drawViz(data1, data2) {
             myrowPro.splice(P40, 1);
             Q40 = myrowPro.indexOf('Q_Bus 40');
             myrowPro.splice(Q40, 1);
-            P1to40 = myrowPro.indexOf('P_Bus  1_Bus 40');  
+            P1to40 = myrowPro.indexOf('P_Bus  1_Bus 40');
             myrowPro[P1to40] = 'P_Bus  1_Bus  2';
             P2to40 = myrowPro.indexOf('P_Bus  2_Bus 40');
             myrowPro[P2to40] = 'P_Bus  2_Bus  1';
-            Q1to40 = myrowPro.indexOf('Q_Bus  1_Bus 40'); 
+            Q1to40 = myrowPro.indexOf('Q_Bus  1_Bus 40');
             myrowPro[Q1to40] = 'Q_Bus  1_Bus  2';
-            Q2to40 = myrowPro.indexOf('Q_Bus  2_Bus 40'); 
+            Q2to40 = myrowPro.indexOf('Q_Bus  2_Bus 40');
             myrowPro[Q2to40] = 'Q_Bus  2_Bus  1';
             I1to40 = myrowPro.indexOf('I_Bus  1_Bus 40');
             myrowPro[I1to40] = 'I_Bus  1_Bus  2';
@@ -157,488 +651,48 @@ function drawViz(data1, data2) {
         }
         mydataPro.push(myrowPro);
     }
-
-
-    if (bG != "0") {
-
-        // 1 delta_Syn
-        // 将数据转化为绘制折线图需要的格式
-        thisdata = [];
-        for (var i = 1; i < mydataPro.length; i++) {
-            for (var j = 1; j < mydataPro[i].length; j++) {
-                if (mydataPro[0][j].search('Syn') == -1) continue;
-                if (mydataPro[0][j].endsWith("_" + bG) == false) continue;
-                if (mydataPro[0][j].search('delta_') == -1) continue;
-                var myrow = {};
-                myrow.time = mydataPro[i][0];
-                myrow.varname = mydataPro[0][j];
-                myrow.num = mydataPro[i][j];
-                thisdata.push(myrow);
-            }
-        }
-        console.log(thisdata);
-        // 绘图(导入drawLineChart.js)
-        chart = LineChart(thisdata, {
-            x: d => d.time,
-            y: d => d.num,
-            z: d => d.varname,
-            xType: d3.scaleLinear,
-            yLabel: "delta_Syn",
-            width: 370,
-            height: 155,
-            color: "steelblue"
-        })
-        // 将图表插入网页元素中
-        var myDataviz = document.createElement('div');
-        myDataviz.className = "dataviz";
-        myDataviz.appendChild(chart);
-        viz.append(myDataviz);
-
-        // 2 omega_Syng
-        // 将数据转化为绘制折线图需要的格式
-        thisdata = [];
-        for (var i = 1; i < mydataPro.length; i++) {
-            for (var j = 1; j < mydataPro[i].length; j++) {
-                if (mydataPro[0][j].search('Syn') == -1) continue;
-                if (mydataPro[0][j].endsWith("_" + bG) == false) continue;
-                if (mydataPro[0][j].search('omega_') == -1) continue;
-                var myrow = {};
-                myrow.time = mydataPro[i][0];
-                myrow.varname = mydataPro[0][j];
-                myrow.num = mydataPro[i][j];
-                thisdata.push(myrow);
-            }
-        }
-        console.log(thisdata);
-        // 绘图(导入drawLineChart.js)
-        chart = LineChart(thisdata, {
-            x: d => d.time,
-            y: d => d.num,
-            z: d => d.varname,
-            xType: d3.scaleLinear,
-            yLabel: "omega_Syn",
-            width: 370,
-            height: 155,
-            color: "steelblue"
-        })
-        // 将图表插入网页元素中
-        var myDataviz = document.createElement('div');
-        myDataviz.className = "dataviz";
-        myDataviz.appendChild(chart);
-        viz.append(myDataviz);
-
-        // 3 e1q_Syn
-        // 将数据转化为绘制折线图需要的格式
-        thisdata = [];
-        for (var i = 1; i < mydataPro.length; i++) {
-            for (var j = 1; j < mydataPro[i].length; j++) {
-                if (mydataPro[0][j].search('Syn') == -1) continue;
-                if (mydataPro[0][j].endsWith("_" + bG) == false) continue;
-                if (mydataPro[0][j].search('e1q_') == -1) continue;
-                var myrow = {};
-                myrow.time = mydataPro[i][0];
-                myrow.varname = mydataPro[0][j];
-                myrow.num = mydataPro[i][j];
-                thisdata.push(myrow);
-            }
-        }
-        console.log(thisdata);
-        // 绘图(导入drawLineChart.js)
-        chart = LineChart(thisdata, {
-            x: d => d.time,
-            y: d => d.num,
-            z: d => d.varname,
-            xType: d3.scaleLinear,
-            yLabel: "e1q_Syn",
-            width: 370,
-            height: 155,
-            color: "steelblue"
-        })
-        // 将图表插入网页元素中
-        var myDataviz = document.createElement('div');
-        myDataviz.className = "dataviz";
-        myDataviz.appendChild(chart);
-        viz.append(myDataviz);
-
-        // 4 e1d_Syn
-        // 将数据转化为绘制折线图需要的格式
-        thisdata = [];
-        for (var i = 1; i < mydataPro.length; i++) {
-            for (var j = 1; j < mydataPro[i].length; j++) {
-                if (mydataPro[0][j].search('Syn') == -1) continue;
-                if (mydataPro[0][j].endsWith("_" + bG) == false) continue;
-                if (mydataPro[0][j].search('e1d_') == -1) continue;
-                var myrow = {};
-                myrow.time = mydataPro[i][0];
-                myrow.varname = mydataPro[0][j];
-                myrow.num = mydataPro[i][j];
-                thisdata.push(myrow);
-            }
-        }
-        console.log(thisdata);
-        // 绘图(导入drawLineChart.js)
-        chart = LineChart(thisdata, {
-            x: d => d.time,
-            y: d => d.num,
-            z: d => d.varname,
-            xType: d3.scaleLinear,
-            yLabel: "e1d_Syn",
-            width: 370,
-            height: 155,
-            color: "steelblue"
-        })
-        // 将图表插入网页元素中
-        var myDataviz = document.createElement('div');
-        myDataviz.className = "dataviz";
-        myDataviz.appendChild(chart);
-        viz.append(myDataviz);
-
-        // 5 vf_Syn
-        // 将数据转化为绘制折线图需要的格式
-        thisdata = [];
-        for (var i = 1; i < mydataPro.length; i++) {
-            for (var j = 1; j < mydataPro[i].length; j++) {
-                if (mydataPro[0][j].search('Syn') == -1) continue;
-                if (mydataPro[0][j].endsWith("_" + bG) == false) continue;
-                if (mydataPro[0][j].search('vf_') == -1) continue;
-                var myrow = {};
-                myrow.time = mydataPro[i][0];
-                myrow.varname = mydataPro[0][j];
-                myrow.num = mydataPro[i][j];
-                thisdata.push(myrow);
-            }
-        }
-        console.log(thisdata);
-        // 绘图(导入drawLineChart.js)
-        chart = LineChart(thisdata, {
-            x: d => d.time,
-            y: d => d.num,
-            z: d => d.varname,
-            xType: d3.scaleLinear,
-            yLabel: "vf_Syn",
-            width: 370,
-            height: 155,
-            color: "steelblue"
-        })
-        // 将图表插入网页元素中
-        var myDataviz = document.createElement('div');
-        myDataviz.className = "dataviz";
-        myDataviz.appendChild(chart);
-        viz.append(myDataviz);
-
-        // 6 pm_Syn
-        // 将数据转化为绘制折线图需要的格式
-        thisdata = [];
-        for (var i = 1; i < mydataPro.length; i++) {
-            for (var j = 1; j < mydataPro[i].length; j++) {
-                if (mydataPro[0][j].search('Syn') == -1) continue;
-                if (mydataPro[0][j].endsWith("_" + bG) == false) continue;
-                if (mydataPro[0][j].search('pm_') == -1) continue;
-                var myrow = {};
-                myrow.time = mydataPro[i][0];
-                myrow.varname = mydataPro[0][j];
-                myrow.num = mydataPro[i][j];
-                thisdata.push(myrow);
-            }
-        }
-        console.log(thisdata);
-        // 绘图(导入drawLineChart.js)
-        chart = LineChart(thisdata, {
-            x: d => d.time,
-            y: d => d.num,
-            z: d => d.varname,
-            xType: d3.scaleLinear,
-            yLabel: "pm_Syn",
-            width: 370,
-            height: 155,
-            color: "steelblue"
-        })
-        // 将图表插入网页元素中
-        var myDataviz = document.createElement('div');
-        myDataviz.className = "dataviz";
-        myDataviz.appendChild(chart);
-        viz.append(myDataviz);
-
-        // 7 p_Syn
-        // 将数据转化为绘制折线图需要的格式
-        thisdata = [];
-        for (var i = 1; i < mydataPro.length; i++) {
-            for (var j = 1; j < mydataPro[i].length; j++) {
-                if (mydataPro[0][j].search('Syn') == -1) continue;
-                if (mydataPro[0][j].endsWith("_" + bG) == false) continue;
-                if (mydataPro[0][j].search('p_') == -1) continue;
-                var myrow = {};
-                myrow.time = mydataPro[i][0];
-                myrow.varname = mydataPro[0][j];
-                myrow.num = mydataPro[i][j];
-                thisdata.push(myrow);
-            }
-        }
-        console.log(thisdata);
-        // 绘图(导入drawLineChart.js)
-        chart = LineChart(thisdata, {
-            x: d => d.time,
-            y: d => d.num,
-            z: d => d.varname,
-            xType: d3.scaleLinear,
-            yLabel: "p_Syn",
-            width: 370,
-            height: 155,
-            color: "steelblue"
-        })
-        // 将图表插入网页元素中
-        var myDataviz = document.createElement('div');
-        myDataviz.className = "dataviz";
-        myDataviz.appendChild(chart);
-        viz.append(myDataviz);
-
-        // 8 q_Syn
-        // 将数据转化为绘制折线图需要的格式
-        thisdata = [];
-        for (var i = 1; i < mydataPro.length; i++) {
-            for (var j = 1; j < mydataPro[i].length; j++) {
-                if (mydataPro[0][j].search('Syn') == -1) continue;
-                if (mydataPro[0][j].endsWith("_" + bG) == false) continue;
-                if (mydataPro[0][j].search('q_') == -1) continue;
-                if (mydataPro[0][j].search('e1q_') != -1) continue;
-                var myrow = {};
-                myrow.time = mydataPro[i][0];
-                myrow.varname = mydataPro[0][j];
-                myrow.num = mydataPro[i][j];
-                thisdata.push(myrow);
-            }
-        }
-        console.log(thisdata);
-        // 绘图(导入drawLineChart.js)
-        chart = LineChart(thisdata, {
-            x: d => d.time,
-            y: d => d.num,
-            z: d => d.varname,
-            xType: d3.scaleLinear,
-            yLabel: "q_Syn",
-            width: 370,
-            height: 155,
-            color: "steelblue"
-        })
-        // 将图表插入网页元素中
-        var myDataviz = document.createElement('div');
-        myDataviz.className = "dataviz";
-        myDataviz.appendChild(chart);
-        viz.append(myDataviz);
-
-    } else if (bB != "0") {
-
-        // 1 theta_Bus
-        // 将数据转化为绘制折线图需要的格式
-        thisdata = [];
-        for (var i = 1; i < mydataPro.length; i++) {
-            for (var j = 1; j < mydataPro[i].length; j++) {
-                if (mydataPro[0][j].match(/Bus/g) == null || mydataPro[0][j].match(/Bus/g).length != 1) continue;
-                if (mydataPro[0][j].endsWith(" " + bB) == false) continue;
-                if (mydataPro[0][j].search('theta_') == -1) continue;
-                var myrow = {};
-                myrow.time = mydataPro[i][0];
-                myrow.varname = mydataPro[0][j];
-                myrow.num = mydataPro[i][j];
-                thisdata.push(myrow);
-            }
-        }
-        console.log(thisdata);
-        // 绘图(导入drawLineChart.js)
-        chart = LineChart(thisdata, {
-            x: d => d.time,
-            y: d => d.num,
-            z: d => d.varname,
-            xType: d3.scaleLinear,
-            yLabel: "theta_Bus",
-            width: 370,
-            height: 320,
-            color: "steelblue"
-        })
-        // 将图表插入网页元素中
-        var myDataviz = document.createElement('div');
-        myDataviz.className = "dataviz";
-        myDataviz.appendChild(chart);
-        viz.append(myDataviz);
-
-        // 2 V_Bus
-        // 将数据转化为绘制折线图需要的格式
-        thisdata = [];
-        for (var i = 1; i < mydataPro.length; i++) {
-            for (var j = 1; j < mydataPro[i].length; j++) {
-                if (mydataPro[0][j].match(/Bus/g) == null || mydataPro[0][j].match(/Bus/g).length != 1) continue;
-                if (mydataPro[0][j].endsWith(" " + bB) == false) continue;
-                if (mydataPro[0][j].search('V_') == -1) continue;
-                var myrow = {};
-                myrow.time = mydataPro[i][0];
-                myrow.varname = mydataPro[0][j];
-                myrow.num = mydataPro[i][j];
-                thisdata.push(myrow);
-            }
-        }
-        console.log(thisdata);
-        // 绘图(导入drawLineChart.js)
-        chart = LineChart(thisdata, {
-            x: d => d.time,
-            y: d => d.num,
-            z: d => d.varname,
-            xType: d3.scaleLinear,
-            yLabel: "V_Bus",
-            width: 370,
-            height: 320,
-            color: "steelblue"
-        })
-        // 将图表插入网页元素中
-        var myDataviz = document.createElement('div');
-        myDataviz.className = "dataviz";
-        myDataviz.appendChild(chart);
-        viz.append(myDataviz);
-
-        // 3 P_Bus
-        // 将数据转化为绘制折线图需要的格式
-        thisdata = [];
-        for (var i = 1; i < mydataPro.length; i++) {
-            for (var j = 1; j < mydataPro[i].length; j++) {
-                if (mydataPro[0][j].match(/Bus/g) == null || mydataPro[0][j].match(/Bus/g).length != 1) continue;
-                if (mydataPro[0][j].endsWith(" " + bB) == false) continue;
-                if (mydataPro[0][j].search('P_') == -1) continue;
-                var myrow = {};
-                myrow.time = mydataPro[i][0];
-                myrow.varname = mydataPro[0][j];
-                myrow.num = mydataPro[i][j];
-                thisdata.push(myrow);
-            }
-        }
-        console.log(thisdata);
-        // 绘图(导入drawLineChart.js)
-        chart = LineChart(thisdata, {
-            x: d => d.time,
-            y: d => d.num,
-            z: d => d.varname,
-            xType: d3.scaleLinear,
-            yLabel: "P_Bus",
-            width: 370,
-            height: 320,
-            color: "steelblue"
-        })
-        // 将图表插入网页元素中
-        var myDataviz = document.createElement('div');
-        myDataviz.className = "dataviz";
-        myDataviz.appendChild(chart);
-        viz.append(myDataviz);
-
-        // 4 Q_Bus
-        // 将数据转化为绘制折线图需要的格式
-        thisdata = [];
-        for (var i = 1; i < mydataPro.length; i++) {
-            for (var j = 1; j < mydataPro[i].length; j++) {
-                if (mydataPro[0][j].match(/Bus/g) == null || mydataPro[0][j].match(/Bus/g).length != 1) continue;
-                if (mydataPro[0][j].endsWith(" " + bB) == false) continue;
-                if (mydataPro[0][j].search('Q_') == -1) continue;
-                var myrow = {};
-                myrow.time = mydataPro[i][0];
-                myrow.varname = mydataPro[0][j];
-                myrow.num = mydataPro[i][j];
-                thisdata.push(myrow);
-            }
-        }
-        console.log(thisdata);
-        // 绘图(导入drawLineChart.js)
-        chart = LineChart(thisdata, {
-            x: d => d.time,
-            y: d => d.num,
-            z: d => d.varname,
-            xType: d3.scaleLinear,
-            yLabel: "Q_Bus",
-            width: 370,
-            height: 320,
-            color: "steelblue"
-        })
-        // 将图表插入网页元素中
-        var myDataviz = document.createElement('div');
-        myDataviz.className = "dataviz";
-        myDataviz.appendChild(chart);
-        viz.append(myDataviz);
-
-    } else if (bL != "0") {
-
-        // 1 P_Bus_Bus
-        // 将数据转化为绘制折线图需要的格式
-        thisdata = [];
-        for (var i = 1; i < mydataPro.length; i++) {
-            for (var j = 1; j < mydataPro[i].length; j++) {
-                if (mydataPro[0][j].match(/Bus/g) == null || mydataPro[0][j].match(/Bus/g).length == 1) continue;
-                if (mydataPro[0][j].endsWith(" " + bL.split("-")[1]) == false && mydataPro[0][j].endsWith(" " + bL.split("-")[0]) == false) continue;
-                if (mydataPro[0][j].endsWith(" " + bL.split("-")[1])) {
-                    if(mydataPro[0][j].search(" " + bL.split("-")[0] + "_") == -1) continue;
-                }
-                if (mydataPro[0][j].endsWith(" " + bL.split("-")[0])) {
-                    if(mydataPro[0][j].search(" " + bL.split("-")[1] + "_") == -1) continue;
-                }
-                if (mydataPro[0][j].search('P_') == -1) continue;
-                var myrow = {};
-                myrow.time = mydataPro[i][0];
-                myrow.varname = mydataPro[0][j];
-                myrow.num = mydataPro[i][j];
-                thisdata.push(myrow);
-            }
-        }
-        console.log(thisdata);
-        // 绘图(导入drawLineChart.js)
-        chart = LineChart(thisdata, {
-            x: d => d.time,
-            y: d => d.num,
-            z: d => d.varname,
-            xType: d3.scaleLinear,
-            yLabel: "P_Bus",
-            width: 750,
-            height: 320,
-            color: "steelblue"
-        })
-        // 将图表插入网页元素中
-        var myDataviz = document.createElement('div');
-        myDataviz.className = "dataviz";
-        myDataviz.appendChild(chart);
-        viz.append(myDataviz);
-
-        // 2 Q_Bus_Bus
-        // 将数据转化为绘制折线图需要的格式
-        thisdata = [];
-        for (var i = 1; i < mydataPro.length; i++) {
-            for (var j = 1; j < mydataPro[i].length; j++) {
-                if (mydataPro[0][j].match(/Bus/g) == null || mydataPro[0][j].match(/Bus/g).length == 1) continue;
-                if (mydataPro[0][j].endsWith(" " + bL.split("-")[1]) == false && mydataPro[0][j].endsWith(" " + bL.split("-")[0]) == false) continue;
-                if (mydataPro[0][j].endsWith(" " + bL.split("-")[1])) {
-                    if(mydataPro[0][j].search(" " + bL.split("-")[0] + "_") == -1) continue;
-                }
-                if (mydataPro[0][j].endsWith(" " + bL.split("-")[0])) {
-                    if(mydataPro[0][j].search(" " + bL.split("-")[1] + "_") == -1) continue;
-                }
-                if (mydataPro[0][j].search('Q_') == -1) continue;
-                var myrow = {};
-                myrow.time = mydataPro[i][0];
-                myrow.varname = mydataPro[0][j];
-                myrow.num = mydataPro[i][j];
-                thisdata.push(myrow);
-            }
-        }
-        console.log(thisdata);
-        // 绘图(导入drawLineChart.js)
-        chart = LineChart(thisdata, {
-            x: d => d.time,
-            y: d => d.num,
-            z: d => d.varname,
-            xType: d3.scaleLinear,
-            yLabel: "Q_Bus",
-            width: 750,
-            height: 320,
-            color: "steelblue"
-        })
-        // 将图表插入网页元素中
-        var myDataviz = document.createElement('div');
-        myDataviz.className = "dataviz";
-        myDataviz.appendChild(chart);
-        viz.append(myDataviz);
-
-    }
+    return mydataPro;
 }
+
+function appendChart(datavizWrap) {
+    var myDataviz = document.createElement('div');
+    myDataviz.className = "dataviz";
+    myDataviz.appendChild(chart);
+    datavizWrap.append(myDataviz);
+}
+
+function pushMyrow(sourceData, targetData, i, j) {
+    var myrow = {};
+    myrow.time = sourceData[i][0];
+    myrow.varname = sourceData[0][j];
+    myrow.num = sourceData[i][j];
+    targetData.push(myrow);
+}
+
+
+/* 页面跳转 */
+$(function(){
+    var flag = true; //节流阀 互斥锁
+    $(window).scroll(function() {
+        if(flag) {
+            $(".content section").each(function(i, ele) {
+                if($(document).scrollTop() >= $(ele).offset().top - 41) {
+                    $(".header_item").eq(i).addClass("header_item_active").siblings().removeClass("header_item_active");
+                }
+            })
+        }  
+    })
+
+    $(".header_item").click(function() {
+        flag = false;
+
+        $(this).addClass("header_item_active").siblings().removeClass("header_item_active");
+    
+        var current = $(".content section").eq($(this).index()).offset().top - 40;
+        $("body, html").stop().animate({
+            scrollTop: current
+        }, function() {
+            flag = true;
+        });
+    })
+})
